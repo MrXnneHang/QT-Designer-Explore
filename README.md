@@ -6,7 +6,7 @@
 
 # 大体思路和布局：
 
-## 进入界面参考
+## 模块分布的参考(b5对战平台)
 
 ![image-20240719093651656](https://fastly.jsdelivr.net/gh/MrXnneHang/blog_img/BlogHosting/img/24/07/202407190936817.png)
 
@@ -18,7 +18,7 @@
 
 ## 用气泡替换文本框参考
 
-1.气泡+tag
+气泡+tag
 
 * 把输入文本框替换成手动点选的tags
 
