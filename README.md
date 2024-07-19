@@ -1,9 +1,5 @@
 对要做的QT项目中每个part和难点拆分制作，主要是边学边做，顺便记录markdown和代码。适合同样入门QT Designer的人。
 
-仓库:
-
-[MrXnneHang/QT-Designer-Explore (github.com)](https://github.com/MrXnneHang/QT-Designer-Explore)
-
 # 大体思路和布局：
 
 ## 模块分布的参考(b5对战平台)
