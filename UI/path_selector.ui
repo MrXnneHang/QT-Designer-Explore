@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PathSelector</class>
+ <widget class="QMainWindow" name="PathSelector">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1009</width>
+    <height>577</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>460</y>
+      <width>891</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="Path_Selector_1">
+         <item>
+          <widget class="QLabel" name="path_select_reminder_4">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>选择路径:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="path_line_3"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="path_selector_3">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="autoRepeatDelay">
+            <number>300</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="Path_Selector_2">
+         <item>
+          <widget class="QLabel" name="path_select_reminder_5">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>选择路径:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="path_line_4"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="path_selector_4">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="autoRepeatDelay">
+            <number>300</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="Path_Selector_3">
+         <item>
+          <widget class="QLabel" name="path_select_reminder_2">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>选择路径:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="path_line_1"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="path_selector_1">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="autoRepeatDelay">
+            <number>300</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="Path_Selector_4">
+         <item>
+          <widget class="QLabel" name="path_select_reminder_3">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>选择路径:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="path_line_2"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="path_selector_2">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="autoRepeatDelay">
+            <number>300</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1009</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
