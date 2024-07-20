@@ -1,5 +1,13 @@
 对要做的QT项目中每个part和难点拆分制作，主要是边学边做，顺便记录markdown和代码。适合同样入门QT Designer的人。
 
+
+
+## 环境需求：
+
+python==3.8
+
+pip install -r requirements.txt
+
 # 大体思路和布局：
 
 ## 模块分布的参考(b5对战平台)
