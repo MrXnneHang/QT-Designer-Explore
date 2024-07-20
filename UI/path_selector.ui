@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1009</width>
+    <width>1070</width>
     <height>577</height>
    </rect>
   </property>
@@ -14,18 +14,18 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="gridLayoutWidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>460</y>
-      <width>891</width>
-      <height>101</height>
+      <y>440</y>
+      <width>941</width>
+      <height>111</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="0">
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <layout class="QVBoxLayout" name="PathSelectorLayout">
+     <item>
+      <layout class="QHBoxLayout" name="Path_Selector_Above">
        <item>
         <layout class="QHBoxLayout" name="Path_Selector_1">
          <item>
@@ -88,8 +88,8 @@
        </item>
       </layout>
      </item>
-     <item row="0" column="0">
-      <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="Path_Selector_Below">
        <item>
         <layout class="QHBoxLayout" name="Path_Selector_3">
          <item>
@@ -160,7 +160,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1009</width>
+     <width>1070</width>
      <height>23</height>
     </rect>
    </property>
