@@ -79,7 +79,16 @@ def switch_tab_index(TabWidget,index):
 
 
 
-## 9.定义可以触发的Label。【★★★★】
+## ~~9.定义可以触发的Label。【★★★】~~
 
 Label更加灵活，适合制作动态效果和动画，而Button就有点死了。
+
+
+
+## 10.Label的预触发，当鼠标放在Label上:
+
+* 颜色加深
+
+* Label缓缓扩大5pix
+* Label外围高亮白色.
 
