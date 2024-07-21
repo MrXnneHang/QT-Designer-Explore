@@ -49,7 +49,7 @@ QTabBar::tab:!selected {
 </string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_1">
      <attribute name="title">
@@ -71,20 +71,24 @@ QTabBar::tab:!selected {
        <string>这里是tab1</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="t1_switch_t2_button">
+     <widget class="QLabel" name="t1_switch_t2_label">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>90</x>
         <y>90</y>
-        <width>281</width>
-        <height>141</height>
+        <width>171</width>
+        <height>131</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family: &quot;Microsoft YaHei&quot;;</string>
+       <string notr="true">font-family: &quot;Microsoft YaHei&quot;;
+font-size: 15px;
+font-weight: 500;
+background-color: rgba(123,190,254, 1); /* 淡蓝色 */
+padding:20px</string>
       </property>
       <property name="text">
-       <string>Switch To Tab 2</string>
+       <string>Switch To Tab2</string>
       </property>
      </widget>
     </widget>
@@ -92,7 +96,7 @@ QTabBar::tab:!selected {
      <attribute name="title">
       <string>Tab 2</string>
      </attribute>
-     <widget class="QLabel" name="t2_label_2">
+     <widget class="QLabel" name="t2_switch_t1_label">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -102,26 +106,31 @@ QTabBar::tab:!selected {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family: &quot;Microsoft YaHei&quot;;</string>
+       <string notr="true">font-family: &quot;Microsoft YaHei&quot;;
+</string>
       </property>
       <property name="text">
        <string>这里是tab2</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="t2_swicth_t1_button">
+     <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>10</x>
         <y>90</y>
-        <width>281</width>
-        <height>141</height>
+        <width>171</width>
+        <height>131</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family: &quot;Microsoft YaHei&quot;;</string>
+       <string notr="true">font-family: &quot;Microsoft YaHei&quot;;
+font-size: 15px;
+font-weight: 500;
+background-color: rgba(123,190,254, 1); /* 淡蓝色 */
+padding:20px</string>
       </property>
       <property name="text">
-       <string>Switch To Tab 1</string>
+       <string>Switch To Tab1</string>
       </property>
      </widget>
     </widget>

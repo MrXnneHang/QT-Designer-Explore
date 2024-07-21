@@ -6,8 +6,8 @@ class RSP_Tab(QMainWindow,Ui_Tab):
     def __init__(self)->None:
         super().__init__()
         self.setupUi(self)
-        self.t1_switch_t2.clicked.connect(self.switch_to_tab2)
-        self.t2_swicth_t1.clicked.connect(self.switch_to_tab1)
+        self.t1_switch_t2_button.clicked.connect(self.switch_to_tab2)
+        self.t2_swicth_t1_button.clicked.connect(self.switch_to_tab1)
     
     def switch_to_tab1(self):
         util.switch_tab_index(self.TabWidget,1)

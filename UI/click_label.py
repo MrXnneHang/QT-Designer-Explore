@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'UI\tab.ui'
+# Form implementation generated from reading ui file 'UI\click_label.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -49,21 +49,30 @@ class Ui_Tab(object):
         self.t1_label_1.setGeometry(QtCore.QRect(10, 10, 81, 16))
         self.t1_label_1.setStyleSheet("font-family: \"Microsoft YaHei\";")
         self.t1_label_1.setObjectName("t1_label_1")
-        self.t1_switch_t2_button = QtWidgets.QPushButton(self.tab_1)
-        self.t1_switch_t2_button.setGeometry(QtCore.QRect(10, 90, 281, 141))
-        self.t1_switch_t2_button.setStyleSheet("font-family: \"Microsoft YaHei\";")
-        self.t1_switch_t2_button.setObjectName("t1_switch_t2_button")
+        self.t1_switch_t2_label = QtWidgets.QLabel(self.tab_1)
+        self.t1_switch_t2_label.setGeometry(QtCore.QRect(90, 90, 171, 131))
+        self.t1_switch_t2_label.setStyleSheet("font-family: \"Microsoft YaHei\";\n"
+"font-size: 15px;\n"
+"font-weight: 500;\n"
+"background-color: rgba(123,190,254, 1); /* 淡蓝色 */\n"
+"padding:20px")
+        self.t1_switch_t2_label.setObjectName("t1_switch_t2_label")
         self.TabWidget.addTab(self.tab_1, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
-        self.t2_label_2 = QtWidgets.QLabel(self.tab_2)
-        self.t2_label_2.setGeometry(QtCore.QRect(10, 10, 71, 16))
-        self.t2_label_2.setStyleSheet("font-family: \"Microsoft YaHei\";")
-        self.t2_label_2.setObjectName("t2_label_2")
-        self.t2_swicth_t1_button = QtWidgets.QPushButton(self.tab_2)
-        self.t2_swicth_t1_button.setGeometry(QtCore.QRect(110, 90, 281, 141))
-        self.t2_swicth_t1_button.setStyleSheet("font-family: \"Microsoft YaHei\";")
-        self.t2_swicth_t1_button.setObjectName("t2_swicth_t1_button")
+        self.t2_switch_t1_label = QtWidgets.QLabel(self.tab_2)
+        self.t2_switch_t1_label.setGeometry(QtCore.QRect(10, 10, 71, 16))
+        self.t2_switch_t1_label.setStyleSheet("font-family: \"Microsoft YaHei\";\n"
+"")
+        self.t2_switch_t1_label.setObjectName("t2_switch_t1_label")
+        self.label_2 = QtWidgets.QLabel(self.tab_2)
+        self.label_2.setGeometry(QtCore.QRect(10, 90, 171, 131))
+        self.label_2.setStyleSheet("font-family: \"Microsoft YaHei\";\n"
+"font-size: 15px;\n"
+"font-weight: 500;\n"
+"background-color: rgba(123,190,254, 1); /* 淡蓝色 */\n"
+"padding:20px")
+        self.label_2.setObjectName("label_2")
         self.TabWidget.addTab(self.tab_2, "")
         Tab.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Tab)
@@ -75,15 +84,15 @@ class Ui_Tab(object):
         Tab.setStatusBar(self.statusbar)
 
         self.retranslateUi(Tab)
-        self.TabWidget.setCurrentIndex(1)
+        self.TabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Tab)
 
     def retranslateUi(self, Tab):
         _translate = QtCore.QCoreApplication.translate
         Tab.setWindowTitle(_translate("Tab", "MainWindow"))
         self.t1_label_1.setText(_translate("Tab", "这里是tab1"))
-        self.t1_switch_t2_button.setText(_translate("Tab", "Switch To Tab 2"))
+        self.t1_switch_t2_label.setText(_translate("Tab", "Switch To Tab2"))
         self.TabWidget.setTabText(self.TabWidget.indexOf(self.tab_1), _translate("Tab", "Tab 1"))
-        self.t2_label_2.setText(_translate("Tab", "这里是tab2"))
-        self.t2_swicth_t1_button.setText(_translate("Tab", "Switch To Tab 1"))
+        self.t2_switch_t1_label.setText(_translate("Tab", "这里是tab2"))
+        self.label_2.setText(_translate("Tab", "Switch To Tab1"))
         self.TabWidget.setTabText(self.TabWidget.indexOf(self.tab_2), _translate("Tab", "Tab 2"))
