@@ -51,11 +51,22 @@ class Ui_ClickLabel(object):
         self.t1_text_label.setObjectName("t1_text_label")
         self.t1_switch_t2_label = ClickQLabel(self.tab_1)
         self.t1_switch_t2_label.setGeometry(QtCore.QRect(90, 90, 171, 131))
-        self.t1_switch_t2_label.setStyleSheet("font-family: \"Microsoft YaHei\";\n"
-"font-size: 15px;\n"
-"font-weight: 500;\n"
-"background-color: rgba(123,190,254, 1); /* 淡蓝色 */\n"
-"padding:20px")
+        self.t1_switch_t2_label.setStyleSheet("/* 初始样式 */\n"
+"QLabel {\n"
+"    font-family: \"Microsoft YaHei\";\n"
+"    font-size: 15px;\n"
+"    font-weight: 500;\n"
+"    background-color: rgba(123, 190, 254, 1); /* 淡蓝色 */\n"
+"    border: 2px solid rgba(0,0,0, 1); /*黑边*/\n"
+"}\n"
+"\n"
+"/* 悬停样式 */\n"
+"QLabel::hover {\n"
+"    background-color: rgba(80, 100, 150, 1); /* 深蓝色 */\n"
+"    color: rgba(220, 220, 220, 1); /* 字体颜色 */\n"
+"    border: 2px solid rgba(255,0,0, 1); /* 白色边框 */\n"
+"}\n"
+"")
         self.t1_switch_t2_label.setObjectName("t1_switch_t2_label")
         self.TabWidget.addTab(self.tab_1, "")
         self.tab_2 = QtWidgets.QWidget()
@@ -66,12 +77,23 @@ class Ui_ClickLabel(object):
 "")
         self.t2_text_label.setObjectName("t2_text_label")
         self.t2_switch_t1_label = ClickQLabel(self.tab_2)
-        self.t2_switch_t1_label.setGeometry(QtCore.QRect(10, 90, 171, 131))
-        self.t2_switch_t1_label.setStyleSheet("font-family: \"Microsoft YaHei\";\n"
-"font-size: 15px;\n"
-"font-weight: 500;\n"
-"background-color: rgba(123,190,254, 1); /* 淡蓝色 */\n"
-"padding:20px")
+        self.t2_switch_t1_label.setGeometry(QtCore.QRect(0, 80, 171, 131))
+        self.t2_switch_t1_label.setStyleSheet("/* 初始样式 */\n"
+"QLabel {\n"
+"    font-family: \"Microsoft YaHei\";\n"
+"    font-size: 15px;\n"
+"    font-weight: 500;\n"
+"    background-color: rgba(123, 190, 254, 1); /* 淡蓝色 */\n"
+"    border: 2px solid rgba(0,0,0, 1); /*黑边*/\n"
+"}\n"
+"\n"
+"/* 悬停样式 */\n"
+"QLabel::hover {\n"
+"    background-color: rgba(80, 100, 150, 1); /* 深蓝色 */\n"
+"    color: rgba(220, 220, 220, 1); /* 字体颜色 */\n"
+"    border: 2px solid rgba(255,0,0, 1); /* 白色边框 */\n"
+"}\n"
+"")
         self.t2_switch_t1_label.setObjectName("t2_switch_t1_label")
         self.TabWidget.addTab(self.tab_2, "")
         ClickLabel.setCentralWidget(self.centralwidget)

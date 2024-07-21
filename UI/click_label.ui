@@ -81,11 +81,22 @@ QTabBar::tab:!selected {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family: &quot;Microsoft YaHei&quot;;
-font-size: 15px;
-font-weight: 500;
-background-color: rgba(123,190,254, 1); /* 淡蓝色 */
-padding:20px</string>
+       <string notr="true">/* 初始样式 */
+QLabel {
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: rgba(123, 190, 254, 1); /* 淡蓝色 */
+    border: 2px solid rgba(0,0,0, 1); /*黑边*/
+}
+
+/* 悬停样式 */
+QLabel::hover {
+    background-color: rgba(80, 100, 150, 1); /* 深蓝色 */
+    color: rgba(220, 220, 220, 1); /* 字体颜色 */
+    border: 2px solid rgba(255,0,0, 1); /* 白色边框 */
+}
+</string>
       </property>
       <property name="text">
        <string>Switch To Tab2</string>
@@ -116,18 +127,29 @@ padding:20px</string>
      <widget class="QLabel" name="t2_switch_t1_label">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>90</y>
+        <x>0</x>
+        <y>80</y>
         <width>171</width>
         <height>131</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family: &quot;Microsoft YaHei&quot;;
-font-size: 15px;
-font-weight: 500;
-background-color: rgba(123,190,254, 1); /* 淡蓝色 */
-padding:20px</string>
+       <string notr="true">/* 初始样式 */
+QLabel {
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: rgba(123, 190, 254, 1); /* 淡蓝色 */
+    border: 2px solid rgba(0,0,0, 1); /*黑边*/
+}
+
+/* 悬停样式 */
+QLabel::hover {
+    background-color: rgba(80, 100, 150, 1); /* 深蓝色 */
+    color: rgba(220, 220, 220, 1); /* 字体颜色 */
+    border: 2px solid rgba(255,0,0, 1); /* 白色边框 */
+}
+</string>
       </property>
       <property name="text">
        <string>Switch To Tab1</string>
