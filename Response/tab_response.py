@@ -6,4 +6,5 @@ class RSP_Tab(QMainWindow,Ui_Tab):
     def __init__(self)->None:
         super().__init__()
         self.setupUi(self)
+        
     
