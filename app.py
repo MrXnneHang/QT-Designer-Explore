@@ -4,6 +4,7 @@ from PyQt5 import QtWidgets
 from Response.path_selector_response import RSP_PathSelector
 from Response.chart_selector_response import RSP_ChartSelector
 from Response.tab_response import RSP_Tab
+from Response.click_label_response import RSP_ClickLabel
 
 
 if __name__ == "__main__":
@@ -18,8 +19,12 @@ if __name__ == "__main__":
     # main_window = RSP_ChartSelector()
     # main_window.show()
 
-    # Tab
-    main_window = RSP_Tab()
+    # # Tab
+    # main_window = RSP_Tab()
+    # main_window.show()
+
+    # ClickLabel
+    main_window = RSP_ClickLabel()
     main_window.show()
 
     
