@@ -24,7 +24,7 @@ class ClickQLabel(QLabel):
     def enterEvent(self, event):
         if self.initial_geometry is None:
             self.initial_geometry = self.geometry()  # 记录初始几何位置
-        self.animate_geometry(scale=1.5)
+        self.animate_geometry(scale=1.12)
         super().enterEvent(event)
 
     def leaveEvent(self, event):
