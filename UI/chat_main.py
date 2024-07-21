@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'windows\main.ui'
+# Form implementation generated from reading ui file 'UI\chat_main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -175,7 +175,42 @@ class Ui_Main(object):
         self.frame_15.setObjectName("frame_15")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.frame_15)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.listWidget_5 = QtWidgets.QListWidget(self.frame_15)
+        self.scrollArea = QtWidgets.QScrollArea(self.frame_15)
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setObjectName("scrollArea")
+        self.scrollAreaWidgetContents_5 = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents_5.setGeometry(QtCore.QRect(0, 0, 664, 550))
+        self.scrollAreaWidgetContents_5.setStyleSheet("            QScrollBar:vertical {\n"
+"                border: none;\n"
+"                background: #F386A6;\n"
+"                width: 2px;\n"
+"                margin: 0px 0px 0px 0px;\n"
+"            }\n"
+"            QScrollBar::handle:vertical {\n"
+"                background: #F386A6;\n"
+"                min-height: 20px;\n"
+"            }\n"
+"            QScrollBar::add-line:vertical {\n"
+"                background: none;\n"
+"                height: 0px;\n"
+"                subcontrol-position: bottom;\n"
+"                subcontrol-origin: margin;\n"
+"            }\n"
+"            QScrollBar::sub-line:vertical {\n"
+"                background: none;\n"
+"                height: 0px;\n"
+"                subcontrol-position: top;\n"
+"                subcontrol-origin: margin;\n"
+"            }\n"
+"            QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
+"                background: none;\n"
+"            }\n"
+"            QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
+"                background: none;\n"
+"            }")
+        self.scrollAreaWidgetContents_5.setObjectName("scrollAreaWidgetContents_5")
+        self.listWidget_5 = QtWidgets.QListWidget(self.scrollAreaWidgetContents_5)
+        self.listWidget_5.setGeometry(QtCore.QRect(0, 0, 664, 541))
         self.listWidget_5.setFocusPolicy(QtCore.Qt.NoFocus)
         self.listWidget_5.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         self.listWidget_5.setStyleSheet("selection-background-color: rgba(255, 255, 255, 0);\n"
@@ -187,7 +222,8 @@ class Ui_Main(object):
         self.listWidget_5.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
         self.listWidget_5.setProperty("isWrapping", False)
         self.listWidget_5.setObjectName("listWidget_5")
-        self.verticalLayout_8.addWidget(self.listWidget_5)
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents_5)
+        self.verticalLayout_8.addWidget(self.scrollArea)
         self.lineEdit_3 = QtWidgets.QLineEdit(self.frame_15)
         self.lineEdit_3.setMinimumSize(QtCore.QSize(0, 0))
         self.lineEdit_3.setFocusPolicy(QtCore.Qt.ClickFocus)
@@ -214,17 +250,33 @@ class Ui_Main(object):
         self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.frame_19)
         self.horizontalLayout_11.setContentsMargins(-1, 0, -1, 0)
         self.horizontalLayout_11.setObjectName("horizontalLayout_11")
-        self.pushButton_4 = QtWidgets.QPushButton(self.frame_19)
-        self.pushButton_4.setStyleSheet("font-family:\"微软雅黑\";")
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.horizontalLayout_11.addWidget(self.pushButton_4)
-        self.pushButton_2 = QtWidgets.QPushButton(self.frame_19)
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalLayout_11.addWidget(self.pushButton_2)
-        self.pushButton = QtWidgets.QPushButton(self.frame_19)
-        self.pushButton.setStyleSheet("font-family:\"微软雅黑\";")
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_11.addWidget(self.pushButton)
+        self.pushbutton = QtWidgets.QPushButton(self.frame_19)
+        self.pushbutton.setStyleSheet("font-family:\"微软雅黑\";")
+        self.pushbutton.setObjectName("pushbutton")
+        self.horizontalLayout_11.addWidget(self.pushbutton)
+        self.label = QtWidgets.QLabel(self.frame_19)
+        self.label.setObjectName("label")
+        self.horizontalLayout_11.addWidget(self.label)
+        self.previous_message_button = QtWidgets.QPushButton(self.frame_19)
+        self.previous_message_button.setStyleSheet("QPushButton {\n"
+"    font-family: \"微软雅黑\";\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(225, 225, 225);\n"
+"}")
+        self.previous_message_button.setObjectName("previous_message_button")
+        self.horizontalLayout_11.addWidget(self.previous_message_button)
+        self.next_message_button = QtWidgets.QPushButton(self.frame_19)
+        self.next_message_button.setStyleSheet("QPushButton {\n"
+"    font-family: \"微软雅黑\";\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(225, 225, 225);\n"
+"}")
+        self.next_message_button.setObjectName("next_message_button")
+        self.horizontalLayout_11.addWidget(self.next_message_button)
         self.horizontalLayout_10.addWidget(self.frame_19)
         self.verticalLayout_8.addWidget(self.frame_18)
         self.horizontalLayout_12.addWidget(self.frame_15)
@@ -251,7 +303,7 @@ class Ui_Main(object):
         Main.setWindowTitle(_translate("Main", "Form"))
         self.lineEdit_3.setText(_translate("Main", "你需要的文件有A,B,C"))
         self.lineEdit_3.setPlaceholderText(_translate("Main", "Type yout message ..."))
-        self.pushButton_4.setText(_translate("Main", "段落一"))
-        self.pushButton_2.setText(_translate("Main", "段落二"))
-        self.pushButton.setText(_translate("Main", "总结一下"))
-
+        self.pushbutton.setText(_translate("Main", "段落一"))
+        self.label.setText(_translate("Main", "                                                                                                                                  "))
+        self.previous_message_button.setText(_translate("Main", "上一条"))
+        self.next_message_button.setText(_translate("Main", "下一条"))

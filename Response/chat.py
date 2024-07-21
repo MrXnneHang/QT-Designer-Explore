@@ -1,21 +1,11 @@
-import random
 import sys
-
-from PyQt5.QtCore import Qt, QSize, QTimer, QPoint
+from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QFont, QFontMetrics
-from PyQt5.QtWidgets import QApplication, QDialog, QListWidgetItem, QWidget
+from PyQt5.QtWidgets import QApplication, QDialog, QListWidgetItem, QWidget, QAbstractItemView
 
+# 导入 UI 生成的类
 from UI.chat_message import Ui_Chat
 from UI.chat_main import Ui_Main
-
-ICON = [
-    "image: url(:/resources/avatar12.png);border-radius: 20px;margin:4px;background-color: rgba(214, 214, 214, 200);",
-    "image: url(:/resources/avatar15.png);border-radius: 20px;margin:4px;background-color: rgba(214, 214, 214, 200);",
-    "image: url(:/resources/avatar23.png);border-radius: 20px;margin:4px;background-color: rgba(214, 214, 214, 200);",
-    "image: url(:/resources/avatar35.png);border-radius: 20px;margin:4px;background-color: rgba(214, 214, 214, 200);",
-
-]
-
 
 class RSP_Chat(QDialog, Ui_Main):
     def __init__(self):
@@ -23,24 +13,21 @@ class RSP_Chat(QDialog, Ui_Main):
         self.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
+        
+        self.self_message_indices = []  # 用于保存你发送的消息的索引
+        self.current_message_index = -1  # 当前消息索引
 
-        self._initialization()
+        self.initialize()
 
-    def _initialization(self):
-        """初始化数据"""
-        self._offset = None
-        self._corner_drag = False
-        self._right_drag = False
-        self._bottom_drag = False
-        self.animation_signal = False
-        self.animation_time = QTimer()  # 动画计时器
-        self.base_system_init()  # 获取边界数值
+    def initialize(self):
         self.add_Chats()
+        self.previous_message_button.clicked.connect(self.locate_previous_message)
+        self.next_message_button.clicked.connect(self.locate_next_message)
 
     def add_Chats(self):
         chats = [
             {
-                "name": "Maud Carson",
+                "name": "self",
                 "message": "Hi",
                 "time": "3:10PM"
             },
@@ -76,16 +63,62 @@ class RSP_Chat(QDialog, Ui_Main):
             },
             {
                 "name": "Cole Strikland",
-                "message": "Yes Russell,just dont talk about it with others.Can you share your opinion?I'm waiting for Maud for comeback to the chat.",
+                "message": "Yes Russell, just don't talk about it with others. Can you share your opinion? I'm waiting for Maud to come back to the chat.",
                 "time": "3:25PM",
             },
             {
                 "name": "self",
-                "message": "I'm waiting for Maud for comeback to the chat.",
+                "message": "I'm waiting for Maud to come back to the chat.",
                 "time": "3:26PM",
-            }
+            },
+            {
+                "name": "Russell Greene",
+                "message": "Can you share your opinion?",
+                "time": "6:39PM"
+            },
+            {
+                "name": "Cole Strikland",
+                "message": "Yes Russell, just don't talk about it with others. Can you share your opinion? I'm waiting for Maud to come back to the chat.",
+                "time": "3:25PM",
+            },
+            {
+                "name": "Russell Greene",
+                "message": "Can you share your opinion?",
+                "time": "6:39PM"
+            },
+            {
+                "name": "Cole Strikland",
+                "message": "Yes Russell, just don't talk about it with others. Can you share your opinion? I'm waiting for Maud to come back to the chat.",
+                "time": "3:25PM",
+            },
+            {
+                "name": "Russell Greene",
+                "message": "Can you share your opinion?",
+                "time": "6:39PM"
+            },
+            {
+                "name": "Cole Strikland",
+                "message": "Yes Russell, just don't talk about it with others. Can you share your opinion? I'm waiting for Maud to come back to the chat.",
+                "time": "3:25PM",
+            },
+            {
+                "name": "self",
+                "message": "I'm waiting for Maud to come back to the chat.",
+                "time": "3:26PM",
+            },
+            {
+                "name": "Russell Greene",
+                "message": "Can you share your opinion?",
+                "time": "6:39PM"
+            },
+            {
+                "name": "Cole Strikland",
+                "message": "Yes Russell, just don't talk about it with others. Can you share your opinion? I'm waiting for Maud to come back to the chat.",
+                "time": "3:25PM",
+            },
+
         ]
-        for chat in chats:
+        for index, chat in enumerate(chats):
             widget = QWidget()
             message = Ui_Chat()
             message.setupUi(widget)
@@ -106,6 +139,9 @@ class RSP_Chat(QDialog, Ui_Main):
                 )
                 message.message_linedit.setAlignment(Qt.AlignRight)
                 message.time_label.setAlignment(Qt.AlignRight)
+
+                # 保存你发送的消息的索引
+                self.self_message_indices.append(index)
             else:
                 message.horizontalLayout_2.removeWidget(message.message_left_space_label)
 
@@ -118,22 +154,29 @@ class RSP_Chat(QDialog, Ui_Main):
             message.message_linedit.setMaximumWidth(text_width + 50)
             message.message_linedit.setMinimumWidth(text_width + 50)
 
+        # 初始化当前消息索引为最后一条消息
+        if self.self_message_indices:
+            self.current_message_index = self.self_message_indices[-1]
+            self.scroll_to_last_self_message()
 
-    def base_system_init(self):
-        """获取窗口边界"""
-        self._padding = 30
-        self._right_rect = [QPoint(x, y) for x in range(self.width() - self._padding, self.width() + 1) for y in
-                            iter((range(1, self.height() - self._padding)))]
-        self._bottom_rect = [QPoint(x, y) for x in range(1, self.width() - self._padding) for y in
-                             iter((range(self.height() - self._padding, self.height() + 1)))]
-        self._corner_rect = [QPoint(x, y) for x in range(self.width() - self._padding, self.width() + 1) for y
-                             in iter((range(self.height() - self._padding, self.height() + 1)))]
+    def scroll_to_last_self_message(self):
+        if self.self_message_indices:
+            last_self_index = self.self_message_indices[-1]
+            self.listWidget_5.scrollToItem(self.listWidget_5.item(last_self_index), QAbstractItemView.PositionAtTop)
+            self.current_message_index = last_self_index
 
+    def locate_previous_message(self):
+        if self.self_message_indices:
+            current_pos = self.self_message_indices.index(self.current_message_index) if self.current_message_index in self.self_message_indices else -1
+            if current_pos > 0:
+                previous_index = self.self_message_indices[current_pos - 1]
+                self.listWidget_5.scrollToItem(self.listWidget_5.item(previous_index), QAbstractItemView.PositionAtTop)
+                self.current_message_index = previous_index
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    app.setAttribute(Qt.AA_EnableHighDpiScaling, True)  # 自适应高分屏
-    app.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
-    main = MyMainForm()
-    main.show()
-    sys.exit(app.exec_())
+    def locate_next_message(self):
+        if self.self_message_indices:
+            current_pos = self.self_message_indices.index(self.current_message_index) if self.current_message_index in self.self_message_indices else -1
+            if current_pos < len(self.self_message_indices) - 1:
+                next_index = self.self_message_indices[current_pos + 1]
+                self.listWidget_5.scrollToItem(self.listWidget_5.item(next_index), QAbstractItemView.PositionAtTop)
+                self.current_message_index = next_index
