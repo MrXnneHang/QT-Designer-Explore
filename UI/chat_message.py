@@ -70,8 +70,8 @@ class Ui_Chat(object):
         self.message_linedit.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.message_linedit.setStyleSheet("background-color: rgb(243, 134, 166);\n"
 "border-radius: 12px;\n"
-"border-top-left-radius: 0px;\n"
-"color: rgb(255, 255, 255);\n"
+"border-top-left-radius:， 0px;\n"
+"color:rgb(20,20,20);\n"
 "padding-left:12px;\n"
 "\n"
 "\n"
@@ -116,3 +116,4 @@ class Ui_Chat(object):
         self.name_label.setText(_translate("Chat", "Maud Carson"))
         self.message_linedit.setText(_translate("Chat", "dfefe"))
         self.time_label.setText(_translate("Chat", "3:10PM"))
+

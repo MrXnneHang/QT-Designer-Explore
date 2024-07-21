@@ -151,8 +151,8 @@ background-color: rgba(214, 214, 214, 200);</string>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(243, 134, 166);
 border-radius: 12px;
-border-top-left-radius: 0px;
-color: rgb(255, 255, 255);
+border-top-left-radius:， 0px;
+color:rgb(20,20,20);
 padding-left:12px;
 
 
@@ -228,8 +228,6 @@ padding-left:12px;
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../res.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
