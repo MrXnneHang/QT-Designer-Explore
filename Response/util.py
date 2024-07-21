@@ -18,3 +18,6 @@ def hidden_layout(layout):
         else:
             widget = item.widget()  # 获取子控件
             widget.setVisible(False)  # 递归调用隐藏子布局
+
+def switch_tab_index(TabWidget,index):
+    TabWidget.setCurrentIndex(index-1)

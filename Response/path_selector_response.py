@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow,QFileDialog
 
 from UI.path_selector import Ui_PathSelector
-from Response.util import hidden_layout
+from Response import util 
 
 class RSP_PathSelector(QMainWindow,Ui_PathSelector):
     def __init__(self) -> None:
@@ -14,10 +14,10 @@ class RSP_PathSelector(QMainWindow,Ui_PathSelector):
         self.path_selector_4.clicked.connect(lambda:self.open_file_dialog(self.path_line_4))
     
     def hidden_Above(self):
-        hidden_layout(self.Path_Selector_Above)
+        util.hidden_layout(self.Path_Selector_Above)
     
     def hidden_Below(self):
-        hidden_layout(self.Path_Selector_Below)
+        util.hidden_layout(self.Path_Selector_Below)
 
     def open_file_dialog(self,line_edit):
         # 弹出文件对话框

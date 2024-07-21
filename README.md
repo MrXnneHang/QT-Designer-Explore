@@ -69,7 +69,15 @@ pip install -r requirements.txt
 
 ## ~~7.Tab.不打开新窗口，但切换不同页面。【★★★】~~
 
-## 8.不直接点击Tab，而用一个Label或者Button链接到Tab。【★★★】
+## ~~8.不直接点击Tab，而用一个Label或者Button链接到Tab。【★★★】~~
+
+```python
+# tab_index是从0开始的
+def switch_tab_index(TabWidget,index):
+    TabWidget.setCurrentIndex(index-1)
+```
+
+
 
 ## 9.定义可以触发的Label。【★★★★★】
 
