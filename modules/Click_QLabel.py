@@ -1,16 +1,16 @@
 import re
-from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel
+from PyQt5.QtWidgets import QLabel
 from PyQt5.QtCore import pyqtSignal, QPropertyAnimation, QRect, Qt
 
 
 
 class ClickQLabel(QLabel):
+    """可以被触发的Label
+    """
     clicked = pyqtSignal()
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.hover_label_qss = ""
-        self.normal_label_qss = ""
         self.initial_geometry = None  # 记录初始几何位置
         self.setAlignment(Qt.AlignCenter)  # 设置文本居中
         self.init_animation()
