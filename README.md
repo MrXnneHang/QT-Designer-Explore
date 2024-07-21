@@ -69,9 +69,9 @@ pip install -r requirements.txt
 
 ## ~~7.Tab.不打开新窗口，但切换不同页面。【★★★】~~
 
-## 8.不直接点击Tab，而用一个Label或者Button链接到Tab。
+## 8.不直接点击Tab，而用一个Label或者Button链接到Tab。【★★★】
 
-## 9.定义可以触发的Label。
+## 9.定义可以触发的Label。【★★★★★】
 
 Label更加灵活，适合制作动态效果和动画，而Button就有点死了。
 
