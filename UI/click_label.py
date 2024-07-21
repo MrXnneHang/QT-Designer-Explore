@@ -9,13 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from modules.Click_QLabel import ClickQLabel
 
-
-class Ui_Tab(object):
-    def setupUi(self, Tab):
-        Tab.setObjectName("Tab")
-        Tab.resize(1070, 577)
-        self.centralwidget = QtWidgets.QWidget(Tab)
+class Ui_ClickLabel(object):
+    def setupUi(self, ClickLabel):
+        ClickLabel.setObjectName("ClickLabel")
+        ClickLabel.resize(1070, 577)
+        self.centralwidget = QtWidgets.QWidget(ClickLabel)
         self.centralwidget.setObjectName("centralwidget")
         self.TabWidget = QtWidgets.QTabWidget(self.centralwidget)
         self.TabWidget.setGeometry(QtCore.QRect(0, 0, 851, 391))
@@ -45,11 +45,11 @@ class Ui_Tab(object):
         self.TabWidget.setObjectName("TabWidget")
         self.tab_1 = QtWidgets.QWidget()
         self.tab_1.setObjectName("tab_1")
-        self.t1_label_1 = QtWidgets.QLabel(self.tab_1)
-        self.t1_label_1.setGeometry(QtCore.QRect(10, 10, 81, 16))
-        self.t1_label_1.setStyleSheet("font-family: \"Microsoft YaHei\";")
-        self.t1_label_1.setObjectName("t1_label_1")
-        self.t1_switch_t2_label = QtWidgets.QLabel(self.tab_1)
+        self.t1_text_label = ClickQLabel(self.tab_1)
+        self.t1_text_label.setGeometry(QtCore.QRect(10, 10, 81, 16))
+        self.t1_text_label.setStyleSheet("font-family: \"Microsoft YaHei\";")
+        self.t1_text_label.setObjectName("t1_text_label")
+        self.t1_switch_t2_label = ClickQLabel(self.tab_1)
         self.t1_switch_t2_label.setGeometry(QtCore.QRect(90, 90, 171, 131))
         self.t1_switch_t2_label.setStyleSheet("font-family: \"Microsoft YaHei\";\n"
 "font-size: 15px;\n"
@@ -60,39 +60,39 @@ class Ui_Tab(object):
         self.TabWidget.addTab(self.tab_1, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
-        self.t2_switch_t1_label = QtWidgets.QLabel(self.tab_2)
-        self.t2_switch_t1_label.setGeometry(QtCore.QRect(10, 10, 71, 16))
-        self.t2_switch_t1_label.setStyleSheet("font-family: \"Microsoft YaHei\";\n"
+        self.t2_text_label = ClickQLabel(self.tab_2)
+        self.t2_text_label.setGeometry(QtCore.QRect(10, 10, 71, 16))
+        self.t2_text_label.setStyleSheet("font-family: \"Microsoft YaHei\";\n"
 "")
-        self.t2_switch_t1_label.setObjectName("t2_switch_t1_label")
-        self.label_2 = QtWidgets.QLabel(self.tab_2)
-        self.label_2.setGeometry(QtCore.QRect(10, 90, 171, 131))
-        self.label_2.setStyleSheet("font-family: \"Microsoft YaHei\";\n"
+        self.t2_text_label.setObjectName("t2_text_label")
+        self.t2_switch_t1_label = ClickQLabel(self.tab_2)
+        self.t2_switch_t1_label.setGeometry(QtCore.QRect(10, 90, 171, 131))
+        self.t2_switch_t1_label.setStyleSheet("font-family: \"Microsoft YaHei\";\n"
 "font-size: 15px;\n"
 "font-weight: 500;\n"
 "background-color: rgba(123,190,254, 1); /* 淡蓝色 */\n"
 "padding:20px")
-        self.label_2.setObjectName("label_2")
+        self.t2_switch_t1_label.setObjectName("t2_switch_t1_label")
         self.TabWidget.addTab(self.tab_2, "")
-        Tab.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(Tab)
+        ClickLabel.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(ClickLabel)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1070, 23))
         self.menubar.setObjectName("menubar")
-        Tab.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(Tab)
+        ClickLabel.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(ClickLabel)
         self.statusbar.setObjectName("statusbar")
-        Tab.setStatusBar(self.statusbar)
+        ClickLabel.setStatusBar(self.statusbar)
 
-        self.retranslateUi(Tab)
+        self.retranslateUi(ClickLabel)
         self.TabWidget.setCurrentIndex(0)
-        QtCore.QMetaObject.connectSlotsByName(Tab)
+        QtCore.QMetaObject.connectSlotsByName(ClickLabel)
 
-    def retranslateUi(self, Tab):
+    def retranslateUi(self, ClickLabel):
         _translate = QtCore.QCoreApplication.translate
-        Tab.setWindowTitle(_translate("Tab", "MainWindow"))
-        self.t1_label_1.setText(_translate("Tab", "这里是tab1"))
-        self.t1_switch_t2_label.setText(_translate("Tab", "Switch To Tab2"))
-        self.TabWidget.setTabText(self.TabWidget.indexOf(self.tab_1), _translate("Tab", "Tab 1"))
-        self.t2_switch_t1_label.setText(_translate("Tab", "这里是tab2"))
-        self.label_2.setText(_translate("Tab", "Switch To Tab1"))
-        self.TabWidget.setTabText(self.TabWidget.indexOf(self.tab_2), _translate("Tab", "Tab 2"))
+        ClickLabel.setWindowTitle(_translate("ClickLabel", "MainWindow"))
+        self.t1_text_label.setText(_translate("ClickLabel", "这里是tab1"))
+        self.t1_switch_t2_label.setText(_translate("ClickLabel", "Switch To Tab2"))
+        self.TabWidget.setTabText(self.TabWidget.indexOf(self.tab_1), _translate("ClickLabel", "Tab 1"))
+        self.t2_text_label.setText(_translate("ClickLabel", "这里是tab2"))
+        self.t2_switch_t1_label.setText(_translate("ClickLabel", "Switch To Tab1"))
+        self.TabWidget.setTabText(self.TabWidget.indexOf(self.tab_2), _translate("ClickLabel", "Tab 2"))

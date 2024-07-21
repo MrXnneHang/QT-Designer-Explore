@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Tab</class>
- <widget class="QMainWindow" name="Tab">
+ <class>ClickLabel</class>
+ <widget class="QMainWindow" name="ClickLabel">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -55,7 +55,7 @@ QTabBar::tab:!selected {
      <attribute name="title">
       <string>Tab 1</string>
      </attribute>
-     <widget class="QLabel" name="t1_label_1">
+     <widget class="QLabel" name="t1_text_label">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -96,7 +96,7 @@ padding:20px</string>
      <attribute name="title">
       <string>Tab 2</string>
      </attribute>
-     <widget class="QLabel" name="t2_switch_t1_label">
+     <widget class="QLabel" name="t2_text_label">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -113,7 +113,7 @@ padding:20px</string>
        <string>这里是tab2</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="t2_switch_t1_label">
       <property name="geometry">
        <rect>
         <x>10</x>
