@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow,QFileDialog,QVBoxLayout,QHBoxLayout
+from PyQt5.QtWidgets import QMainWindow,QFileDialog
 
 from UI.path_selector import Ui_PathSelector
 from Response.util import hidden_layout
