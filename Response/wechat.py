@@ -2,8 +2,8 @@ import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QVBoxLayout
 
-from modules.wechat_message import Wechat_Message
-from modules.bubble_message import MessageType, BubbleMessage
+
+from modules.bubble_message import MessageType, BubbleMessage,Message_Window
 
 from UI.wechat_main import Ui_Chat_Main
 from tools.yml import read_history
@@ -22,7 +22,7 @@ class RSP_WeChat(QDialog, Ui_Chat_Main):
         self.current_message_index = -1  # 当前消息索引
 
         # 创建 RSP_Wechat 实例
-        self.wechat_widget = Wechat_Message()
+        self.wechat_widget = Message_Window()
 
         # 将 wechat_widget 添加到 message_placeholder 中
         self.message_layout = QVBoxLayout(self.message_placeholder)
