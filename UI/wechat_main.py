@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'UI/chat_main.ui'
+# Form implementation generated from reading ui file 'UI\wechat_main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,36 +14,44 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Chat_Main(object):
     def setupUi(self, Chat_Main):
         Chat_Main.setObjectName("Chat_Main")
-        Chat_Main.resize(1002, 655)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(Chat_Main)
+        Chat_Main.resize(1002, 590)
+        self.widget = QtWidgets.QWidget(Chat_Main)
+        self.widget.setGeometry(QtCore.QRect(10, 0, 981, 581))
+        self.widget.setObjectName("widget")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.widget)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setSpacing(6)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.message_placeholder = QtWidgets.QWidget(Chat_Main)
+        self.message_layout = QtWidgets.QVBoxLayout()
+        self.message_layout.setObjectName("message_layout")
+        self.message_placeholder = QtWidgets.QWidget(self.widget)
         self.message_placeholder.setObjectName("message_placeholder")
-        self.verticalLayout_2.addWidget(self.message_placeholder)
-        self.input_frame = QtWidgets.QFrame(Chat_Main)
-        self.input_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.input_frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.input_frame.setObjectName("input_frame")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.input_frame)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.lineEdit = QtWidgets.QLineEdit(self.input_frame)
-        self.lineEdit.setObjectName("lineEdit")
-        self.horizontalLayout.addWidget(self.lineEdit)
-        self.scroll_pre_button = QtWidgets.QPushButton(self.input_frame)
-        self.scroll_pre_button.setObjectName("scroll_pre_button")
-        self.horizontalLayout.addWidget(self.scroll_pre_button)
-        self.scroll_next_button = QtWidgets.QPushButton(self.input_frame)
-        self.scroll_next_button.setObjectName("scroll_next_button")
-        self.horizontalLayout.addWidget(self.scroll_next_button)
-        self.verticalLayout_2.addWidget(self.input_frame)
+        self.message_layout.addWidget(self.message_placeholder)
+        self.verticalLayout_2.addLayout(self.message_layout)
+        self.input_layout = QtWidgets.QHBoxLayout()
+        self.input_layout.setObjectName("input_layout")
+        self.pushButton_3 = QtWidgets.QPushButton(self.widget)
+        self.pushButton_3.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.input_layout.addWidget(self.pushButton_3)
+        self.pushButton_2 = QtWidgets.QPushButton(self.widget)
+        self.pushButton_2.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.input_layout.addWidget(self.pushButton_2)
+        self.pushButton_1 = QtWidgets.QPushButton(self.widget)
+        self.pushButton_1.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButton_1.setObjectName("pushButton_1")
+        self.input_layout.addWidget(self.pushButton_1)
+        self.verticalLayout_2.addLayout(self.input_layout)
+        self.verticalLayout_2.setStretch(0, 10)
+        self.verticalLayout_2.setStretch(1, 1)
 
         self.retranslateUi(Chat_Main)
         QtCore.QMetaObject.connectSlotsByName(Chat_Main)
 
     def retranslateUi(self, Chat_Main):
         _translate = QtCore.QCoreApplication.translate
-        Chat_Main.setWindowTitle(_translate("Chat_Main", "Chat"))
-        self.scroll_pre_button.setText(_translate("Chat_Main", "Previous"))
-        self.scroll_next_button.setText(_translate("Chat_Main", "Next"))
+        Chat_Main.setWindowTitle(_translate("Chat_Main", "Form"))
+        self.pushButton_3.setText(_translate("Chat_Main", "段落一"))
+        self.pushButton_2.setText(_translate("Chat_Main", "段落二"))
+        self.pushButton_1.setText(_translate("Chat_Main", "总结一下"))

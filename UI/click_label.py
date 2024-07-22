@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from modules.Click_QLabel import ClickQLabel
+from modules.click_qlabel import ClickQLabel
 
 class Ui_ClickLabel(object):
     def setupUi(self, ClickLabel):
