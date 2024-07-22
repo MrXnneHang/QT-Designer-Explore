@@ -6,7 +6,7 @@ from Response.path_selector_response import RSP_PathSelector
 from Response.chart_selector_response import RSP_ChartSelector
 from Response.tab_response import RSP_Tab
 from Response.click_label_response import RSP_ClickLabel
-from Response.chat import RSP_Chat
+from Response.wechat import RSP_WeChat
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
@@ -31,7 +31,9 @@ if __name__ == "__main__":
     # main_window.show()
 
     # Chat
-    main_window = RSP_Chat()
+    main_window = RSP_WeChat()
     main_window.show()
+
+
     
     sys.exit(app.exec_())
