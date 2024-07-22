@@ -1,4 +1,3 @@
-import re
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtCore import pyqtSignal, QPropertyAnimation, QRect, Qt
 
