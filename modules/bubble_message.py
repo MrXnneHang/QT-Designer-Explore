@@ -4,7 +4,9 @@ from PyQt5.QtCore import QSize, pyqtSignal, Qt, QThread
 from PyQt5.QtGui import QPainter, QFont, QColor, QPixmap, QPolygon, QFontMetrics
 from PyQt5.QtWidgets import QWidget, QLabel, QHBoxLayout, QSizePolicy, QVBoxLayout, QSpacerItem, \
     QScrollArea, QScrollBar
+from PyQt5 import QtWidgets
 
+from UI.wechat_message import Ui_Chat_Message
 
 
 class MessageType:
@@ -124,9 +126,10 @@ class ImageMessage(QLabel):
             self.open_image_thread.start()
 
 
-class BubbleMessage(QWidget):
+class BubbleMessage(QWidget,Ui_Chat_Message):
     def __init__(self, str_content, avatar, Type, is_send=False, parent=None):
         super().__init__(parent)
+        self.setupUi(self)
         self.isSend = is_send
         # self.set
         self.setStyleSheet(
@@ -134,9 +137,11 @@ class BubbleMessage(QWidget):
             border:none;
             '''
         )
-        layout = QHBoxLayout()
+        
+        layout = QtWidgets.QHBoxLayout(self.message_widget)
+        layout.setContentsMargins(0,0,0,0)
         layout.setSpacing(0)
-        layout.setContentsMargins(0, 5, 5, 5)
+        layout.setObjectName("message_layout")
         # self.resize(QSize(200, 50))
         self.avatar = Avatar(avatar)
         triangle = Triangle(Type, is_send)
@@ -153,13 +158,12 @@ class BubbleMessage(QWidget):
             layout.addItem(self.spacerItem)
             layout.addWidget(self.message, 1)
             layout.addWidget(triangle, 0, Qt.AlignTop | Qt.AlignLeft)
-            layout.addWidget(self.avatar, 0, Qt.AlignTop | Qt.AlignLeft)
+            # layout.addWidget(self.avatar, 0, Qt.AlignTop | Qt.AlignLeft)
         else:
-            layout.addWidget(self.avatar, 0, Qt.AlignTop | Qt.AlignRight)
+            # layout.addWidget(self.avatar, 0, Qt.AlignTop | Qt.AlignRight)
             layout.addWidget(triangle, 0, Qt.AlignTop | Qt.AlignRight)
             layout.addWidget(self.message, 1)
             layout.addItem(self.spacerItem)
-        self.setLayout(layout)
 
 
 class ScrollAreaContent(QWidget):
@@ -230,7 +234,7 @@ class ScrollBar(QScrollBar):
 class ChatWidget(QWidget):
     def __init__(self):
         super().__init__()
-        # self.resize(500, 200)
+        self.resize(500, 200)
 
         layout = QVBoxLayout()
         layout.setSpacing(0)

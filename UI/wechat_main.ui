@@ -177,7 +177,7 @@ QTabBar::tab:!selected {
 </string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_1">
          <attribute name="title">
@@ -329,7 +329,7 @@ QTabBar::tab:!selected {
          <attribute name="title">
           <string>对话一</string>
          </attribute>
-         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,2">
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,1">
           <property name="spacing">
            <number>0</number>
           </property>
