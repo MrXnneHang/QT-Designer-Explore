@@ -8,7 +8,6 @@ from modules.bubble_message import MessageType, BubbleMessage,Message_Window
 
 from UI.wechat_main import Ui_Chat_Main
 from tools.yml import read_history
-from tools.window_auto_scale import calculate_screen_scaling_ratio
 class RSP_WeChat(QDialog, Ui_Chat_Main):
     """对话窗口
     @func:
@@ -17,9 +16,6 @@ class RSP_WeChat(QDialog, Ui_Chat_Main):
     def __init__(self):
         super(RSP_WeChat, self).__init__()
         self.setupUi(self)
-        self.ratio = calculate_screen_scaling_ratio()
-        self.resize_window()
-
 
         # 创建 RSP_Wechat 实例
         self.wechat_widget = Message_Window()
