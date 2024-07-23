@@ -12,8 +12,7 @@ if __name__ == "__main__":
     QtWidgets.QApplication.setAttribute(Qt.AA_EnableHighDpiScaling, True)
     QtWidgets.QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
     app = QtWidgets.QApplication(sys.argv)
-    app.setAttribute(Qt.AA_EnableHighDpiScaling, True)  # 自适应高分屏
-    app.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
+
 
     # # Path Selector
     # main_window = RSP_PathSelector()
