@@ -230,7 +230,7 @@ class ScrollBar(QScrollBar):
 class ChatWidget(QWidget):
     def __init__(self):
         super().__init__()
-        self.resize(500, 200)
+        # self.resize(500, 200)
 
         layout = QVBoxLayout()
         layout.setSpacing(0)
