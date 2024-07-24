@@ -14,12 +14,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_main(object):
     def setupUi(self, main):
         main.setObjectName("main")
-        main.resize(750, 515)
+        main.resize(936, 626)
         self.background = QtWidgets.QWidget(main)
         self.background.setStyleSheet("QWidget#background{\n"
 "background-image:url(:/bg/resource/draw/bg.jpg);\n"
 "background-repeat:no-repeat;\n"
-"background-position:center;}\n"
+"background-position:center;\n"
+"border-radius: 6px;}\n"
 "")
         self.background.setObjectName("background")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.background)
