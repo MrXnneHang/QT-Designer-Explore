@@ -76,27 +76,6 @@ class Triangle(QLabel):
             painter.drawPolygon(triangle)
 
 
-class Notice(QLabel):
-    def __init__(self, text, type_=3, parent=None):
-        super().__init__(text, parent)
-        self.type_ = type_
-        self.setFont(QFont('微软雅黑', 12))
-        self.setWordWrap(True)
-        self.setTextInteractionFlags(Qt.TextSelectableByMouse)
-        self.setAlignment(Qt.AlignCenter)
-
-
-class Avatar(QLabel):
-    def __init__(self, avatar, parent=None):
-        super().__init__(parent)
-        if isinstance(avatar, str):
-            self.setPixmap(QPixmap(avatar).scaled(45, 45))
-            self.image_path = avatar
-        elif isinstance(avatar, QPixmap):
-            self.setPixmap(avatar.scaled(45, 45))
-        self.setFixedSize(QSize(45, 45))
-
-
 class OpenImageThread(QThread):
     def __init__(self, image_path):
         super().__init__()
@@ -142,8 +121,6 @@ class BubbleMessage(QWidget,Ui_Chat_Message):
         layout.setContentsMargins(0,0,0,0)
         layout.setSpacing(0)
         layout.setObjectName("message_layout")
-        # self.resize(QSize(200, 50))
-        self.avatar = Avatar(avatar)
         triangle = Triangle(Type, is_send)
         if Type == MessageType.Text:
             self.message = TextMessage(str_content, is_send)
@@ -290,9 +267,6 @@ class Message_Window(QWidget):
         self.w1 = ChatWidget()
         # 获取当前日期和时间
         current_time = datetime.now().strftime('%Y-%m-%d %H:%M')
-        # 创建 Notice 对象
-        time_message = Notice(current_time)
-        self.w1.add_message_item(time_message)
         w2 = QLabel("你需要文件1文件2")
         layout.addWidget(self.w1)
         layout.addWidget(w2)

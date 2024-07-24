@@ -1,14 +1,14 @@
 import sys
 from PyQt5.QtCore import Qt,QSize
 from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QApplication, QDialog, QVBoxLayout
+from PyQt5.QtWidgets import QMainWindow, QVBoxLayout, QDialog
 
 
 from modules.bubble_message import MessageType, BubbleMessage,Message_Window
 
-from UI.wechat_main import Ui_Chat_Main
+from UI.main import Ui_main
 from tools.yml import read_history
-class RSP_WeChat(QDialog, Ui_Chat_Main):
+class RSP_WeChat(QMainWindow,Ui_main):
     """对话窗口
     @func:
     """
@@ -21,12 +21,16 @@ class RSP_WeChat(QDialog, Ui_Chat_Main):
         self.wechat_widget = Message_Window()
 
         # 将 wechat_widget 添加到 message_placeholder 中
-        self.message_layout = QVBoxLayout(self.message_placeholder)
+        self.message_layout = QVBoxLayout(self.func1_llm_page)
         self.message_layout.addWidget(self.wechat_widget)
+        self.close_button.clicked.connect(self.close_Event)
 
         self.initialize()
 
     def initialize(self):
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+
         self.add_history()
     
     def resize_window(self):
@@ -48,6 +52,10 @@ class RSP_WeChat(QDialog, Ui_Chat_Main):
             else:
                 bubble_message = BubbleMessage(chat['message'], './data/head1.jpg', Type=MessageType.Text, is_send=False)
                 self.wechat_widget.w1.add_message_item(bubble_message)
+    
+    def close_Event(self):
+        self.close()
+
 
 
 

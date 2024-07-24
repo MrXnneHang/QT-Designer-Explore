@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="bg">
+    <file>resource/draw/bg.jpg</file>
+  </qresource>
+  <qresource prefix="icon">
+    <file>resource/apl/close_light.png</file>
+    <file>resource/apl/close_selected.png</file>
+    <file>resource/apl/MaterialSymbolsCloseRounded.svg</file>
+    <file>resource/apl/MaterialSymbolsCloseRounded.png</file>
+  </qresource>
+</RCC>

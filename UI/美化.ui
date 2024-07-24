@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Tab</class>
+ <widget class="QMainWindow" name="Tab">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>515</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>58</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../resource/logo.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="global_tab_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>110</y>
+      <width>732</width>
+      <height>384</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane {
+    border-top: 1px solid rgba(0, 0, 0, 1); /* 黑色 */
+}
+
+QTabBar::tab {
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 10px 25px; /* 增加内边距 */
+    border-bottom: none;
+	min-width: 30px;
+    min-height: 18px
+   
+}
+
+QTabBar::tab:selected {
+    color: white; /* 淡蓝色 */
+    border-bottom: 1px solid rgb(101,108,137); /* 淡蓝色 */
+}
+
+QTabBar::tab:!selected {
+    margin-bottom: 2px;
+}
+</string>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>Tab 1</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>Tab 2</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>0</y>
+        <width>31</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+   border:none;
+   border-radius:6px;
+   background-color: transparent;
+}
+QPushButton:hover{
+   background-color: rgb(52,59,72); /* 修正了拼写错误 */
+}
+QPushButton:pressed{
+   background-color: transparent;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../resource/apl/MaterialSymbolsCloseRounded.png</normaloff>../resource/apl/MaterialSymbolsCloseRounded.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>559</x>
+        <y>0</y>
+        <width>31</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+   border:none;
+   border-radius:6px;
+   background-color: transparent;
+}
+QPushButton:hover{
+   background-color: rgb(52,59,72); /* 修正了拼写错误 */
+}
+QPushButton:pressed{
+   background-color: rgb(25,40,50);
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../resource/apl/MaterialSymbolsCloseRounded.png</normaloff>../resource/apl/MaterialSymbolsCloseRounded.png</iconset>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
