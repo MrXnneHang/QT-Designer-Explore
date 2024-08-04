@@ -1,3 +1,5 @@
+这里暂时没有跟上我的进度，因为那个软件要求不开源，这里面也存在一些不完善的地方，之后等我手头项目结了就整理一下把模块分出来，每个单独写readme。
+
 [QT Designer Explore](http://xnnehang.top/blog/67)  
 你可以在这里找到我的路径。  
 对要做的QT项目中每个part和难点拆分制作，主要是边学边做，顺便记录markdown和代码。适合同样入门QT Designer的人。
